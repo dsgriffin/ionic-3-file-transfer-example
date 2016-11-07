@@ -57,6 +57,20 @@ cd files
 ls
 ```
 
+## Extending this example - checking if files/directories exist, copying files etc.
+
+Ionic Native has a [`File`](https://ionicframework.com/docs/v2/native/file/) module (seperate from the `Transfer` module we're using in this example). 
+
+Using it is as simple as installing the plugin
+
+`ionic plugin add cordova-plugin-file`
+
+Importing it alongside `Transfer` in the `home.ts`
+
+`import {File, Transfer} from 'ionic-native';`
+
+Now you can get coding with it ✌🏻 
+
 ## License
 
 MIT
