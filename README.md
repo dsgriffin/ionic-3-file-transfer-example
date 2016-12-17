@@ -4,7 +4,7 @@
 
 A very simple file transfer example for Ionic 2 using TypeScript and the [Transfer](http://ionicframework.com/docs/v2/native/transfer/) module from `ionic-native`.
 
-<img src="http://dsgriffin.github.io/images/ionic-2-file-transfer-example/result-1.png" width="275"> <img src="http://dsgriffin.github.io/images/ionic-2-file-transfer-example/result-2.png" width="275"> <img src="http://dsgriffin.github.io/images/ionic-2-file-transfer-example/result-3.png" width="275">
+<img src="http://dsgriffin.github.io/images/ionic-2-file-transfer-example/results.png" width="675">
 
 ## Build
 
