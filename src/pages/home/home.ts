@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 import {NavController, Platform, AlertController} from 'ionic-angular';
 
-import {Transfer} from 'ionic-native';
+import {File, Transfer} from 'ionic-native';
 
 @Component({
   selector: 'page-home',
@@ -11,7 +11,26 @@ import {Transfer} from 'ionic-native';
 
 export class HomePage {
 
+  storageDirectory: string = '';
+
   constructor(public navCtrl: NavController, public platform: Platform, public alertCtrl: AlertController) {
+    this.platform.ready().then(() => {
+      // make sure this is on a device, not an emulation (e.g. chrome tools device mode)
+      if(!this.platform.is('cordova')) {
+        return false;
+      }
+
+      if (this.platform.is('ios')) {
+        this.storageDirectory = cordova.file.documentsDirectory;
+      }
+      else if(this.platform.is('android')) {
+        this.storageDirectory = cordova.file.dataDirectory;
+      }
+      else {
+        // exit otherwise, but you could add further types here e.g. Windows
+        return false;
+      }
+    });
   }
 
   downloadImage(image) {
@@ -21,25 +40,7 @@ export class HomePage {
       const fileTransfer = new Transfer();
       const imageLocation = `${cordova.file.applicationDirectory}www/assets/img/${image}`;
 
-      let targetPath;
-
-      // make sure this is on a device, not an emulation (e.g. chrome tools device mode)
-      if(!this.platform.is('cordova')) {
-        return false;
-      }
-
-      if (this.platform.is('ios')) {
-        targetPath = cordova.file.documentsDirectory + image;
-      }
-      else if(this.platform.is('android')) {
-        targetPath = cordova.file.dataDirectory + image;
-      }
-      else {
-        // exit otherwise, but you could add further types here e.g. Windows
-        return false;
-      }
-
-      fileTransfer.download(imageLocation, targetPath).then((entry) => {
+      fileTransfer.download(imageLocation, this.storageDirectory + image).then((entry) => {
 
         const alertSuccess = this.alertCtrl.create({
           title: `Download Succeeded!`,
@@ -63,6 +64,33 @@ export class HomePage {
 
     });
 
+  }
+
+  retrieveImage(image) {
+
+    File.checkFile(this.storageDirectory, image)
+      .then(() => {
+
+        const alertSuccess = this.alertCtrl.create({
+          title: `File retrieval Succeeded!`,
+          subTitle: `${image} was successfully retrieved from: ${this.storageDirectory}`,
+          buttons: ['Ok']
+        });
+
+        return alertSuccess.present();
+
+      })
+      .catch((err) => {
+
+        const alertFailure = this.alertCtrl.create({
+          title: `File retrieval Failed!`,
+          subTitle: `${image} was not successfully retrieved. Error Code: ${err.code}`,
+          buttons: ['Ok']
+        });
+
+        return alertFailure.present();
+
+      });
   }
 
 }

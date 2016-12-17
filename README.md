@@ -1,10 +1,10 @@
-# Ionic 2 File Transfer Example
+![Logo](http://dsgriffin.github.io/images/logos/ionic-2-file-transfer-example.png)
 
-![](https://img.shields.io/badge/ionic-2.0.0--rc.2-green.svg)
+![](https://img.shields.io/badge/ionic-2.0.0--rc.4-green.svg)
 
 A very simple file transfer example for Ionic 2 using TypeScript and the [Transfer](http://ionicframework.com/docs/v2/native/transfer/) module from `ionic-native`.
 
-<img src="http://dsgriffin.github.io/images/ionic-2-file-transfer-example/result-1.png" width="275"><img src="http://dsgriffin.github.io/images/ionic-2-file-transfer-example/result-2.png" width="275">
+<img src="http://dsgriffin.github.io/images/ionic-2-file-transfer-example/result-1.png" width="275"> <img src="http://dsgriffin.github.io/images/ionic-2-file-transfer-example/result-2.png" width="275"> <img src="http://dsgriffin.github.io/images/ionic-2-file-transfer-example/result-3.png" width="275">
 
 ## Build
 
@@ -15,16 +15,18 @@ Clone the repository and follow the steps based on the platform of your device.
 *Note*: building iOS requires a Mac OS.
 
 1. `npm install`
-2. `ionic build ios`
-3. Connect your iOS device and run the application, either by
+2. `cordova platform install ios`
+3. `ionic build ios --prod`
+4. Connect your iOS device and run the application, either by
   1. Opening up the relevant `.xcodeproj` on `Xcode` and clicking the run button (making sure your device is selected)
   2. Running `ionic run ios --device` on your CLI - this requires that the npm package `ios-deploy` is installed globally (`npm install -g ios-deploy`)
 
-### Android
+### Android 
 
 1. `npm install`
-2. `ionic build android`
-3. Connect your Android device and run the application with `ionic run android` (make sure USB debugging is enabled on your device)
+2. `cordova platform install android`
+3. `ionic build android --prod`
+4. Connect your Android device and run the application with `ionic run android` (make sure USB debugging is enabled on your device)
 
 ## File Transfer - Storage Locations
 
@@ -35,41 +37,6 @@ The `.jpg` used in this example is saved in different locations dependant on pla
 * **Android** - persistent and private data storage within the application's sandbox using `cordova.file.dataDirectory`
 
 [Here's the list](https://github.com/apache/cordova-plugin-file#where-to-store-files) of the different places you can store files using this plugin.
-
-## Testing
-
-#### iOS
-
-Using `Xcode`, go to `Window` and selected `Devices`, then
- 
-1. Select the device you downloaded the file to
-2. Select the application you used to download the file (in this case `Ionic2FileTransferExample`)
-3. You should see the folder `Documents`, inside of which you'll find the image.
-
-#### Android
-
-Use `adb`:
-
-```bash
-adb shell
-run-as com.ionicframework.ionic2filetransferexample648376
-cd files
-ls
-```
-
-## Extending this example - checking if files/directories exist, copying files etc.
-
-Ionic Native has a [`File`](https://ionicframework.com/docs/v2/native/file/) module (seperate from the `Transfer` module we're using in this example). 
-
-Using it is as simple as installing the plugin
-
-`ionic plugin add cordova-plugin-file`
-
-Importing it alongside `Transfer` in the `home.ts`
-
-`import {File, Transfer} from 'ionic-native';`
-
-Now you can get coding with it ✌🏻 
 
 ## License
 
