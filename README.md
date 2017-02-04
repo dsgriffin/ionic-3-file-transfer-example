@@ -1,6 +1,6 @@
 ![Logo](http://dsgriffin.github.io/images/logos/ionic-2-file-transfer-example.png)
 
-![](https://img.shields.io/badge/ionic-2.0.0--rc.4-green.svg)
+![](https://img.shields.io/badge/ionic-2.0.0-green.svg)
 
 A very simple file transfer example for Ionic 2 using TypeScript and the [Transfer](http://ionicframework.com/docs/v2/native/transfer/) module from `ionic-native`.
 
