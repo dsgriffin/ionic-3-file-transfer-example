@@ -6,13 +6,16 @@ A very simple file transfer example for Ionic 2 using TypeScript and the [Transf
 
 <img src="http://dsgriffin.github.io/images/ionic-2-file-transfer-example/results.png" width="675">
 
+## Requirements
+
+* Either an iPhone or Android device (File Transfer will not work on an emulator)
+* If you're building for iOS, you'll need XCode. 
+
 ## Build
 
 Clone the repository and follow the steps based on the platform of your device.
 
 #### iOS
-
-*Note*: building iOS requires a Mac OS.
 
 1. `npm install`
 2. `cordova platform install ios`
