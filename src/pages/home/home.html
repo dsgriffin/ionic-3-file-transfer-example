@@ -1,14 +1,20 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      File Transfer Example
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card>
+    <ion-card-header>
+      Ionic 3 File Transfer Example
+    </ion-card-header>
+    <ion-card-content>
+      <img src="assets/img/pug.jpg" alt="Cute Pug">
+      <button ion-button (click)="downloadImage('pug.jpg')" color="secondary">Download image</button>
+      <button ion-button (click)="retrieveImage('pug.jpg')" color="secondary">Retrieve downloaded image</button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

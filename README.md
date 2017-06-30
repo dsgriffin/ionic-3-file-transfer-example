@@ -1,26 +1,49 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+![Logo](http://dsgriffin.github.io/images/logos/ionic-file-transfer-example.png)
 
-## How to use this template
+![](https://img.shields.io/badge/ionic-3.5.0-green.svg)
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+A simple file transfer example in Ionic 3 using Ionic Native's
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+*  [Transfer](http://ionicframework.com/docs/native/transfer/) module to download a file to the local device
+* And then, using the [File](http://ionicframework.com/docs/native/file/) module, retrieve that file
 
-### With the Ionic CLI:
+<img src="http://dsgriffin.github.io/images/ionic-file-transfer-example/results.png" width="675">
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+## Requirements
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
+* File Transfer will not work on an emulator; you'll need an iOS or Android device
+* If you're building/testing for/on iOS, you'll need XCode.
 
-Then, to run it, cd into `myBlank` and run:
+## Build
 
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
+Clone the repository and follow the steps based on the platform of your device.
 
-Substitute ios for android if not on a Mac.
+#### iOS
 
+1. `npm install`
+2. `cordova platform add ios`
+3. `ionic cordova build ios`
+4. Connect your iOS device and run the application, either by
+  1. Opening up the relevant `.xcodeproj` on `Xcode` and clicking the run button (making sure your device is selected)
+  2. Running `ionic cordova run ios --device` on your CLI - this requires that the npm package `ios-deploy` is installed globally (`npm install -g ios-deploy`)
+
+### Android
+
+1. `npm install`
+2. `cordova platform add android`
+3. `ionic cordova build android`
+4. Connect your Android device and run the application with `ionic cordova run android` (make sure USB debugging is enabled on your device)
+
+## File Transfer - Storage Locations
+
+The `.jpg` used in this example is saved in different locations dependant on platform:
+
+* **iOS** - in the app-specific `Documents/` folder using `cordova.file.documentsDirectory`
+
+* **Android** - persistent and private data storage within the application's sandbox using `cordova.file.dataDirectory`
+
+[Here's the list](https://github.com/apache/cordova-plugin-file#where-to-store-files) of the different places you can store files using this plugin.
+
+## License
+
+MIT
