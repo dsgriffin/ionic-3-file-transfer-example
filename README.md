@@ -1,4 +1,4 @@
-![Logo](http://dsgriffin.github.io/images/logos/ionic-file-transfer-example.png)
+# Ionic 3 File Transfer Example 📁
 
 ![](https://img.shields.io/badge/ionic-3.5.0-green.svg)
 
