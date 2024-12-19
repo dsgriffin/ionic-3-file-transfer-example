@@ -7,7 +7,7 @@ A simple file transfer example in Ionic 3 using Ionic Native's
 *  [Transfer](http://ionicframework.com/docs/native/transfer/) module to download a file to the local device
 * And then, using the [File](http://ionicframework.com/docs/native/file/) module, retrieve that file
 
-<img src="http://dsgriffin.github.io/ionic-file-transfer-example/images/results.png" width="450" height="450">
+<img src="http://dsgriffin.github.io/ionic-file-transfer-example/images/results.png" width="450" height="450" />
 
 ## Requirements
 
@@ -43,6 +43,10 @@ The `.jpg` used in this example is saved in different locations dependant on pla
 * **Android** - persistent and private data storage within the application's sandbox using `cordova.file.dataDirectory`
 
 [Here's the list](https://github.com/apache/cordova-plugin-file#where-to-store-files) of the different places you can store files using this plugin.
+
+## Contributing
+
+If you've found a bug or have an idea, feel free to open an Issue. If you've got a fix or feature ready, open a PR. Thanks!
 
 ## License
 
