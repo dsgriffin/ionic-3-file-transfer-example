@@ -7,7 +7,7 @@ A simple file transfer example in Ionic 3 using Ionic Native's
 *  [Transfer](http://ionicframework.com/docs/native/transfer/) module to download a file to the local device
 * And then, using the [File](http://ionicframework.com/docs/native/file/) module, retrieve that file
 
-<img src="http://dsgriffin.github.io/ionic-file-transfer-example/images/results.png" width="450" height="450" />
+<img src="http://dsgriffin.github.io/images/ionic-3-file-transfer-example/results.png" width="450" height="450" />
 
 ## Requirements
 
